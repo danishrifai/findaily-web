@@ -149,4 +149,25 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
   console.log("Script FinDaily aktif!");
 });
+// --- FITUR UBAH NAMA ---
+const editNameBtn = document.getElementById("edit-name-btn");
+const userNameEl = document.getElementById("user-name");
+
+if (editNameBtn && userNameEl) {
+  editNameBtn.addEventListener("click", () => {
+    const currentName = userNameEl.textContent;
+    const newName = prompt("Masukkan nama baru:", currentName);
+    if (newName && newName.trim() !== "") {
+      userNameEl.textContent = newName.trim();
+      localStorage.setItem("userName", newName.trim()); // simpan di localStorage
+    }
+  });
+
+  // Ambil nama dari localStorage pas reload
+  const savedName = localStorage.getItem("userName");
+  if (savedName) {
+    userNameEl.textContent = savedName;
+  }
+}
+
 
