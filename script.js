@@ -123,6 +123,8 @@ document.getElementById('formTransaksi').addEventListener('submit', e => {
 // Inisialisasi awal
 // ============================
 (function init() {
+  // Tombol ubah saldo manual
+document.getElementById('ubahSaldoBtn').addEventListener('click', ubahSaldoAwal);
   saldoVisible = JSON.parse(localStorage.getItem('saldoVisible'));
   if (saldoVisible === null) saldoVisible = true;
   toggleEye.innerHTML = saldoVisible
@@ -131,3 +133,4 @@ document.getElementById('formTransaksi').addEventListener('submit', e => {
   renderListTransaksi();
   updateSaldo();
 })();
+
