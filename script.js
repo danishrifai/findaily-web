@@ -147,4 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderListTransaksi();
     updateSaldo();
   })();
+  console.log("Script FinDaily aktif!");
 });
+
