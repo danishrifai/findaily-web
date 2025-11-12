@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FinDaily - Home</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="findaily2.css" />
 </head>
 <body>
   <div class="container">
@@ -24,21 +24,21 @@
     <!-- Saldo Card -->
     <section class="saldo-card">
       <div class="saldo-label">Saldo</div>
-      <div class="saldo-amount">Rp. 10.000.000</div>
-      <div class="toggle-eye"><i class="fa-regular fa-eye"></i></div>
+      <div class="saldo-amount" id="saldoAmount">Rp. 10.000.000</div>
+      <div class="toggle-eye" id="toggleEye"><i class="fa-regular fa-eye"></i></div>
       <div class="saldo-details">
         <div class="income">
           <i class="fa-solid fa-arrow-up green"></i>
           <div>
             <div class="label">Pemasukan</div>
-            <div class="amount">Rp. 0</div>
+            <div class="amount" id="totalPemasukan">Rp. 0</div>
           </div>
         </div>
         <div class="expense">
           <i class="fa-solid fa-arrow-down red"></i>
           <div>
             <div class="label">Pengeluaran</div>
-            <div class="amount">Rp. 0</div>
+            <div class="amount" id="totalPengeluaran">Rp. 0</div>
           </div>
         </div>
       </div>
@@ -87,6 +87,27 @@
         <div class="task-menu"><i class="fa-solid fa-ellipsis-vertical"></i></div>
       </div>
     </section>
+
+    <!-- Input Transaksi -->
+    <section class="input-transaksi">
+      <h2>Tambah Pemasukan / Pengeluaran</h2>
+      <form id="formTransaksi">
+        <select id="jenisTransaksi" required>
+          <option value="" disabled selected>Pilih jenis</option>
+          <option value="pemasukan">Pemasukan</option>
+          <option value="pengeluaran">Pengeluaran</option>
+        </select>
+        <input type="number" id="nominal" placeholder="Nominal (Rp)" required min="1" />
+        <input type="text" id="keterangan" placeholder="Keterangan (optional)" />
+        <button type="submit">Tambah</button>
+      </form>
+    </section>
+
+    <!-- Daftar Transaksi -->
+    <section class="list-transaksi">
+      <h2>Daftar Transaksi</h2>
+      <ul id="listTransaksi"></ul>
+    </section>
   </div>
 
   <!-- Bottom Navigation -->
@@ -97,6 +118,7 @@
     <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i></a>
   </nav>
 
-  <script src="script.js"></script>
+  <script src="findaily3.js"></script>
 </body>
 </html>
+
