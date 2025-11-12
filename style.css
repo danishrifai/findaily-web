@@ -394,5 +394,23 @@ body {
   background: rgba(255, 255, 255, 0.35);
   transform: scale(1.05);
 }
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.edit-btn:hover {
+  transform: scale(1.2);
+}
+
 
 
